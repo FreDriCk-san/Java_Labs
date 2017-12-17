@@ -64,7 +64,7 @@ public class LinkedList<T> implements Iterable<T> {
 
     }
 
-    private Container search(int position) {
+    private Container searchPrev(int position) {
 
         Container element = this.first;
 
@@ -90,7 +90,7 @@ public class LinkedList<T> implements Iterable<T> {
             return;
         }
 
-        Container prev = search(position);
+        Container prev = searchPrev(position);
 
         Container added = new Container(value);
         added.prev = prev;
@@ -165,7 +165,7 @@ public class LinkedList<T> implements Iterable<T> {
             return removeLast();
         }
 
-        removeByPrev(search(position));
+        removeByPrev(searchPrev(position));
 
         return true;
     }
